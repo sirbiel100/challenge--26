@@ -31,12 +31,13 @@ header {
   position: relative;
 }
 header input {
-  cursor: pointer;
   width: 4em;
   height: 2em;
   border-radius: 1em;
+  display: none;
 }
 header label {
+  cursor: pointer;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -176,4 +177,82 @@ body:has(header > input:checked) section:nth-of-type(2) h3::after {
 }
 body:has(header > input:checked) section:last-of-type h3::after {
   content: "399.99";
+}
+
+@media screen and (min-width: 75em) {
+  body {
+    justify-content: center;
+    gap: 4em;
+  }
+  img:first-of-type {
+    left: 100%;
+    top: 0;
+    transform: translateX(-100%);
+  }
+  img:last-of-type {
+    display: block;
+    top: 100%;
+    left: 0;
+    transform: translateY(-100%);
+  }
+  main {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    padding: 2em 0 0 0;
+  }
+  main section {
+    padding: 3em 1.5em;
+    width: 24em;
+    box-shadow: 0 0 2em 0 #b3b5c6;
+  }
+  main section button {
+    cursor: pointer;
+    padding: 1.2em 0;
+    border: 1px solid transparent;
+    transition: all 200ms ease-in-out;
+  }
+  main section:nth-of-type(odd) {
+    padding: 3em 3em 3em 1.5em;
+  }
+  main section:nth-of-type(odd) button:hover {
+    background: none;
+    background-color: transparent;
+    border: 1px solid hsl(232, 13%, 33%);
+    color: #696fdd;
+  }
+  main section:nth-of-type(3) {
+    padding: 3em 1.5em 3em 3em;
+  }
+  main section:nth-of-type(even) {
+    z-index: 1;
+    transform: scale(1.1);
+    background: linear-gradient(to bottom, #a3a8f0, #696fdd);
+  }
+  main section:nth-of-type(even) button {
+    background-color: #f6f6fe;
+  }
+  main section:nth-of-type(even) button:hover {
+    background-color: transparent;
+    border: 1px solid #f6f6fe;
+    color: #f6f6fe;
+  }
+  main section:first-of-type h3::after {
+    content: "19.99";
+  }
+  main section:nth-of-type(2) h3::after {
+    content: "24.99";
+  }
+  main section:last-of-type h3::after {
+    content: "39.99";
+  }
+  body:has(header > input:checked) section:first-of-type h3::after {
+    content: "199.99";
+  }
+  body:has(header > input:checked) section:nth-of-type(2) h3::after {
+    content: "249.99";
+  }
+  body:has(header > input:checked) section:last-of-type h3::after {
+    content: "399.99";
+  }
 }/*# sourceMappingURL=index.css.map */

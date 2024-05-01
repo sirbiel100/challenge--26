@@ -35,13 +35,14 @@ header {
   position: relative;
 
   input {
-    cursor: pointer;
     width: 4em;
     height: 2em;
     border-radius: 1em;
+    display: none;
   }
 
   label {
+    cursor: pointer;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -230,6 +231,129 @@ body:has(header > input:checked) {
     h3 {
       &::after {
         content: "399.99";
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 75em) {
+  body {
+    justify-content: center;
+    gap: 4em;
+  }
+
+  img {
+    &:first-of-type {
+      left: 100%;
+      top: 0;
+      transform: translateX(-100%);
+    }
+
+    &:last-of-type {
+      display: block;
+      top: 100%;
+      left: 0;
+      transform: translateY(-100%);
+    }
+  }
+
+  main {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    padding: 2em 0 0 0;
+
+    section {
+      padding: 3em 1.5em;
+      width: 24em;
+      box-shadow: 0 0 2em 0 $Light_Grayish_Blue;
+
+      button {
+        cursor: pointer;
+        padding: 1.2em 0;
+        border: 1px solid transparent;
+        transition: all 200ms ease-in-out;
+      }
+
+      &:nth-of-type(odd){
+        padding: 3em 3em 3em 1.5em;
+        button:hover {
+          background: none;
+          background-color: transparent;
+          border: 1px solid $Dark_Grayish_Blue;
+          color: $Dark_Blue;
+        }
+      }
+
+      &:nth-of-type(3){
+        padding: 3em 1.5em 3em 3em;
+      }
+
+
+      &:nth-of-type(even) {
+        z-index: 1;
+        transform: scale(1.1);
+        background: linear-gradient(to bottom, $Light_Blue, $Dark_Blue);
+
+        button {
+          background-color: $Very_Light_Grayish_Blue;
+
+          &:hover{
+            background-color: transparent;
+            border: 1px solid $Very_Light_Grayish_Blue;
+            color: $Very_Light_Grayish_Blue;
+          }
+        }
+      }
+    }
+
+    section:first-of-type {
+      h3 {
+        &::after {
+          content: "19.99";
+        }
+      }
+    }
+
+    section:nth-of-type(2) {
+      h3 {
+        &::after {
+          content: "24.99";
+        }
+      }
+    }
+
+    section:last-of-type {
+      h3 {
+        &::after {
+          content: "39.99";
+        }
+      }
+    }
+  }
+
+  body:has(header > input:checked) {
+    section:first-of-type {
+      h3 {
+        &::after {
+          content: "199.99";
+        }
+      }
+    }
+
+    section:nth-of-type(2) {
+      h3 {
+        &::after {
+          content: "249.99";
+        }
+      }
+    }
+
+    section:last-of-type {
+      h3 {
+        &::after {
+          content: "399.99";
+        }
       }
     }
   }
