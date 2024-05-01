@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import "../variables.scss";
+
+body {
+  background-color: $Very_Light_Grayish_Blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  padding: 5em 0 1em 0;
+}
+
+img {
+  position: absolute;
+  max-width: 100%;
+  height: auto;
+  z-index: -1;
+
+  &:first-of-type {
+    left: 100%;
+    top: 0;
+    transform: translateX(-40%);
+  }
+
+  &:last-of-type {
+    display: none;
+  }
+}
+
+h1 {
+  color: $Grayish_Blue;
+}
+
+header {
+  position: relative;
+
+  input {
+    cursor: pointer;
+    width: 4em;
+    height: 2em;
+    border-radius: 1em;
+  }
+
+  label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4em;
+    height: 2em;
+    background: linear-gradient(to right, $Light_Blue, $Dark_Blue);
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    padding: 0 0.4em;
+
+    &::after {
+      content: "Monthly";
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translate(30%, -60%);
+      color: $Light_Grayish_Blue;
+    }
+
+    &::before {
+      content: "Annualy";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(-130%, -60%);
+      color: $Light_Grayish_Blue;
+    }
+
+    div {
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 50%;
+      background-color: $Very_Light_Grayish_Blue;
+      transform: translateX(110%);
+      transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+  }
+
+  &:has(input:checked) label {
+    div {
+      transform: translateX(0);
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 2em 0 0 0;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    background-color: #f06c6c79;
+    padding: 2em 1em;
+    width: 19em;
+    border-radius: 0.5em;
+    box-shadow: 0 0 1em 0 $Light_Grayish_Blue;
+
+    h2,
+    p {
+      font-size: 1em;
+    }
+
+    h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.1em;
+      font-size: 3em;
+      small {
+        font-size: 0.6em;
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 0.8em 0;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      border: none;
+      border-radius: 0.5em;
+    }
+
+    &:nth-of-type(odd) {
+      background-color: $Very_Light_Grayish_Blue;
+
+      h2,
+      h3,
+      p {
+        color: $Grayish_Blue;
+      }
+
+      p {
+        border-bottom: 1px solid $Light_Grayish_Blue;
+        width: 100%;
+        text-align: center;
+        padding: 0 0 1em 0;
+
+        &:first-of-type {
+          border-top: 1px solid $Light_Grayish_Blue;
+          padding: 1em 0 1em 0 !important;
+        }
+      }
+
+      button {
+        background: linear-gradient(to right, $Light_Blue, $Dark_Blue);
+        color: $Very_Light_Grayish_Blue;
+      }
+    }
+
+    &:nth-of-type(even) {
+      background: linear-gradient(to bottom, $Light_Blue, $Dark_Blue);
+
+      h2,
+      h3,
+      p {
+        color: $Very_Light_Grayish_Blue;
+      }
+
+      p {
+        border-bottom: 1px solid $Light_Grayish_Blue;
+        width: 100%;
+        text-align: center;
+        padding: 0 0 1em 0;
+
+        &:first-of-type {
+          border-top: 1px solid $Light_Grayish_Blue;
+          padding: 1em 0 1em 0 !important;
+        }
+      }
+
+      button {
+        color: $Dark_Blue;
+      }
+    }
+  }
+
+  section:first-of-type {
+    h3 {
+      &::after {
+        content: "19.99";
+      }
+    }
+  }
+
+  section:nth-of-type(2) {
+    h3 {
+      &::after {
+        content: "24.99";
+      }
+    }
+  }
+
+  section:last-of-type {
+    h3 {
+      &::after {
+        content: "39.99";
+      }
+    }
+  }
+}
+
+body:has(header > input:checked) {
+  section:first-of-type {
+    h3 {
+      &::after {
+        content: "199.99";
+      }
+    }
+  }
+
+  section:nth-of-type(2) {
+    h3 {
+      &::after {
+        content: "249.99";
+      }
+    }
+  }
+
+  section:last-of-type {
+    h3 {
+      &::after {
+        content: "399.99";
+      }
+    }
+  }
+}

@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+body {
+  background-color: #f6f6fe;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  padding: 5em 0 1em 0;
+}
+
+img {
+  position: absolute;
+  max-width: 100%;
+  height: auto;
+  z-index: -1;
+}
+img:first-of-type {
+  left: 100%;
+  top: 0;
+  transform: translateX(-40%);
+}
+img:last-of-type {
+  display: none;
+}
+
+h1 {
+  color: #6d708d;
+}
+
+header {
+  position: relative;
+}
+header input {
+  cursor: pointer;
+  width: 4em;
+  height: 2em;
+  border-radius: 1em;
+}
+header label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4em;
+  height: 2em;
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+  border-radius: 1em;
+  display: flex;
+  align-items: center;
+  padding: 0 0.4em;
+}
+header label::after {
+  content: "Monthly";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translate(30%, -60%);
+  color: #b3b5c6;
+}
+header label::before {
+  content: "Annualy";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-130%, -60%);
+  color: #b3b5c6;
+}
+header label div {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background-color: #f6f6fe;
+  transform: translateX(110%);
+  transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+header:has(input:checked) label div {
+  transform: translateX(0);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 2em 0 0 0;
+}
+main section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+  background-color: rgba(240, 108, 108, 0.4745098039);
+  padding: 2em 1em;
+  width: 19em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em 0 #b3b5c6;
+}
+main section h2,
+main section p {
+  font-size: 1em;
+}
+main section h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.1em;
+  font-size: 3em;
+}
+main section h3 small {
+  font-size: 0.6em;
+}
+main section button {
+  width: 100%;
+  padding: 0.8em 0;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  border: none;
+  border-radius: 0.5em;
+}
+main section:nth-of-type(odd) {
+  background-color: #f6f6fe;
+}
+main section:nth-of-type(odd) h2,
+main section:nth-of-type(odd) h3,
+main section:nth-of-type(odd) p {
+  color: #6d708d;
+}
+main section:nth-of-type(odd) p {
+  border-bottom: 1px solid #b3b5c6;
+  width: 100%;
+  text-align: center;
+  padding: 0 0 1em 0;
+}
+main section:nth-of-type(odd) p:first-of-type {
+  border-top: 1px solid #b3b5c6;
+  padding: 1em 0 1em 0 !important;
+}
+main section:nth-of-type(odd) button {
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+  color: #f6f6fe;
+}
+main section:nth-of-type(even) {
+  background: linear-gradient(to bottom, #a3a8f0, #696fdd);
+}
+main section:nth-of-type(even) h2,
+main section:nth-of-type(even) h3,
+main section:nth-of-type(even) p {
+  color: #f6f6fe;
+}
+main section:nth-of-type(even) p {
+  border-bottom: 1px solid #b3b5c6;
+  width: 100%;
+  text-align: center;
+  padding: 0 0 1em 0;
+}
+main section:nth-of-type(even) p:first-of-type {
+  border-top: 1px solid #b3b5c6;
+  padding: 1em 0 1em 0 !important;
+}
+main section:nth-of-type(even) button {
+  color: #696fdd;
+}
+main section:first-of-type h3::after {
+  content: "19.99";
+}
+main section:nth-of-type(2) h3::after {
+  content: "24.99";
+}
+main section:last-of-type h3::after {
+  content: "39.99";
+}
+
+body:has(header > input:checked) section:first-of-type h3::after {
+  content: "199.99";
+}
+body:has(header > input:checked) section:nth-of-type(2) h3::after {
+  content: "249.99";
+}
+body:has(header > input:checked) section:last-of-type h3::after {
+  content: "399.99";
+}/*# sourceMappingURL=index.css.map */
