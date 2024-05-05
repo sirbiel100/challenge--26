@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Click Here](https://www.frontendmentor.io/solutions/pricing-component-with-toggle-html-and-scss-only-mmtyov3Exx)
 - Live Site URL: [Click Here](sirbiel100.github.io/challenge--26/)
 
 ## My process
