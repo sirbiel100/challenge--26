@@ -8,12 +8,16 @@
   font-size: 15px;
 }
 
+html {
+  width: 100vw;
+  width: 100svw;
+  overflow-x: hidden;
+}
+
 html,
 body {
-  width: 100%;
-  min-height: 100dvh;
   min-height: 100vh;
-  overflow-x: hidden;
+  min-height: 100dvh;
   touch-action: pan-y;
 }
 
@@ -22,4 +26,5 @@ body {
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
+  width: 100%;
 }/*# sourceMappingURL=reset.css.map */

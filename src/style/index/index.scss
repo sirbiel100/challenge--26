@@ -13,6 +13,7 @@ body {
 img {
   position: absolute;
   max-width: 100%;
+  width: 100%;
   height: auto;
   z-index: -1;
 
@@ -101,7 +102,6 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 1.5em;
-    background-color: #f06c6c79;
     padding: 2em 1em;
     width: 19em;
     border-radius: 0.5em;
@@ -116,7 +116,7 @@ main {
       display: flex;
       align-items: center;
       gap: 0.1em;
-      font-size: 3em;
+      font-size: 3.6em;
       small {
         font-size: 0.6em;
       }
@@ -132,12 +132,12 @@ main {
     }
 
     &:nth-of-type(odd) {
-      background-color: $Very_Light_Grayish_Blue;
+      background-color: #fff;
 
       h2,
       h3,
       p {
-        color: $Grayish_Blue;
+        color: $Dark_Grayish_Blue;
       }
 
       p {
@@ -164,7 +164,7 @@ main {
       h2,
       h3,
       p {
-        color: $Very_Light_Grayish_Blue;
+        color: #fff;
       }
 
       p {
@@ -239,10 +239,11 @@ body:has(header > input:checked) {
 @media screen and (min-width: 75em) {
   body {
     justify-content: center;
-    gap: 4em;
+    gap: 6em;
   }
 
   img {
+    width: auto;
     &:first-of-type {
       left: 100%;
       top: 0;
@@ -265,7 +266,7 @@ body:has(header > input:checked) {
 
     section {
       padding: 3em 1.5em;
-      width: 24em;
+      width: 21em;
       box-shadow: 0 0 2em 0 $Light_Grayish_Blue;
 
       button {
