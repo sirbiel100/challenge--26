@@ -207,7 +207,6 @@ body:has(header > input:checked) section:last-of-type h3::after {
   main section {
     padding: 3em 1.5em;
     width: 21em;
-    box-shadow: 0 0 2em 0 #b3b5c6;
   }
   main section button {
     cursor: pointer;
@@ -217,6 +216,7 @@ body:has(header > input:checked) section:last-of-type h3::after {
   }
   main section:nth-of-type(odd) {
     padding: 3em 3em 3em 1.5em;
+    box-shadow: 0 0 1.5em 0 rgba(0, 0, 0, 0.0549019608);
   }
   main section:nth-of-type(odd) button:hover {
     background: none;
@@ -231,6 +231,7 @@ body:has(header > input:checked) section:last-of-type h3::after {
     z-index: 1;
     transform: scale(1.1);
     background: linear-gradient(to bottom, #a3a8f0, #696fdd);
+    box-shadow: none;
   }
   main section:nth-of-type(even) button {
     background-color: #f6f6fe;

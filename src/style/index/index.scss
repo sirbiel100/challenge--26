@@ -267,7 +267,7 @@ body:has(header > input:checked) {
     section {
       padding: 3em 1.5em;
       width: 21em;
-      box-shadow: 0 0 2em 0 $Light_Grayish_Blue;
+      
 
       button {
         cursor: pointer;
@@ -278,6 +278,7 @@ body:has(header > input:checked) {
 
       &:nth-of-type(odd){
         padding: 3em 3em 3em 1.5em;
+        box-shadow: 0 0 1.5em 0 #0000000e;
         button:hover {
           background: none;
           background-color: transparent;
@@ -295,6 +296,7 @@ body:has(header > input:checked) {
         z-index: 1;
         transform: scale(1.1);
         background: linear-gradient(to bottom, $Light_Blue, $Dark_Blue);
+        box-shadow: none;
 
         button {
           background-color: $Very_Light_Grayish_Blue;
